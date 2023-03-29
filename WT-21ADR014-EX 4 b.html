@@ -1,0 +1,280 @@
+# WT-21ADR014-EX4b
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 200%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background-image: url("./bsr-focus-nature-hero.jpg");
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.container {
+  position: absolute;
+  right: 0;
+  margin: 90px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.btn {
+  background-color: #ea7e11;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  background-color: rgb(159, 229, 52);
+  opacity:0.5;
+}
+</style>
+</head>
+<body>
+<div class="bg-img">
+    <h2 style="text-align: center;">Registration Form</h2>
+    <div class="container" >
+    <form name="loginpg" action="./WT EX 4b sec.html"  onsubmit="return validateForm()" method="post">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" >
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="password">
+
+    <label for="psw"><b>ConfirmPassword</b></label>
+    <input type="password" placeholder="ReEnter the Password" name="cpsw" id="ConfirmPassword">
+    
+    <button type="submit" class="btn">Login</button>
+  </form></div>
+</div>
+</body>
+<script>
+  function validateForm() {
+    let  em = document.forms["loginpg"]["email"];
+    let pas = document.forms["loginpg"]["psw"];
+    let cpas = document.forms["loginpg"]["cpsw"];
+    
+    if (em.value == "") {
+      alert("Email must be filled out");
+      em.focus();
+      return false;
+    }
+    if (pas.value == "") {
+      alert("Password must be filled out");
+      pas.focus();
+      return false;
+    }
+    if (cpas.value == "") {
+      alert("Confirm password must be filled out");
+      cpas.focus();
+      return false;
+    }
+    if(cpas.value!=pas.value) {
+      alert("Password not match");
+      cpas.focus();
+      return false;
+
+    }
+    else{
+      return true;
+    }
+    }
+</script>
+</html>
+
+
+//----------//
+
+<!DOCTYPE html>
+<html> 
+  <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course Registration Form</title> 
+  </head> 
+  <style>
+    p{
+      text-align: center;
+      color: rgb(16, 15, 15);
+    }
+    .bg-img {
+  background-image: url("./download.jpeg");
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+  .btn {
+  background-color: #eae311;
+  padding: 16px 20px;
+  border: none;
+  border-radius:80px;
+  margin-left:130px;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  justify-content: center;
+  }
+  .box{
+    border: 1px solid; 
+    width:25%; 
+    padding:10px;
+    background:white;
+    border-radius:30px;
+    margin-left:32%;
+    margin-top:32px;
+  }
+  </style>
+  <body> 
+    <div class="container bg-img" style="border: 1px solid;border-radius:30px;">
+    <div class="box"><h2 style="text-align: center;">Course Registration Form </h2> 
+  <form name="registrationForm" action="" onsubmit="return validateForm()"  method="POST"> 
+  <p> Username:
+  <input type="text" name="Username" size="20" maxlength="20"> 
+  </p > 
+  
+  <p style="padding-right:50px;">
+  Gender: 
+  <input type="radio" name="Gender" value="Male"> Male 
+  <input type="radio" name="Gender" value="Female"> Female 
+  </P> 
+  
+  <p style="padding-right:70px;">
+  Branch:
+  <input type="checkbox" name="branch" value="IT">B.E
+  <input type="checkbox" name="branch" value="CSE">B.Tech
+
+  </p>
+  
+  <p>
+  Address: <input type="text" name="address" size="40" maxlength="40"> 
+  </p>
+  
+  <p> 
+  State: 
+  <select name="State"> 
+  <option value="CA">California 
+  <option value="OR">Oregon 
+  <option value="WA">Washington 
+  </select> 
+  </p> 
+  
+  <p> 
+  Course Interested: 
+  <select name="Course" class="form-control"> 
+  <option value="AI">Artificial Intelligence
+  <option value="ML">Machine Learning
+  <option value="DS">Data Structures
+  <option value="DBMS">Database Management Systems
+  <option value="OS">Operating Systems
+  </select> 
+  </p> 
+  
+  <p> 
+  Contact Number: 
+  <input type="text" name="ContactNumber" size="15" maxlength="15"> 
+  </P>
+  
+  <button type="submit" class="btn">Login</button>
+  </div>
+  </div>
+  </form> 
+  </body> 
+  <script> 
+  function validateForm() {
+    let user = document.forms["registrationForm"]["Username"];
+    let pas = document.forms["registrationForm"]["Password"];
+    let con = document.forms["registrationForm"]["ConfirmPassword"];
+    let gen = document.forms["registrationForm"]["Gender"];
+    let br = document.forms["registrationForm"]["Branch"];
+    let ad = document.forms["registrationForm"]["Address"];
+    let st = document.forms["registrationForm"]["State"];
+    let co = document.forms["registrationForm"]["Course"];
+    let cont = document.forms["registrationForm"]["ContactNumber"];
+  
+    if (user.value == "") {
+      alert("Username must be filled out");
+      user.focus();
+      return false;
+    }
+    
+    if (pas.value == "") {
+      alert("Password must be filled out");
+      pas.focus();
+      return false;
+    }
+    if (con.value == "") {
+      alert("Confirm password must be filled out");
+      con.focus();
+      return false;
+    }
+    if(con.value!=pas.value){
+      alert("Enter the same value");
+      con.select();
+      return false;
+    }
+    if (gen.value == "") {
+      alert("Gender must be filled out");
+      gen.focus();
+      return false;
+    }
+    if (br.value == "") {
+      alert("Branch must be filled out");
+      br.focus();
+      return false;
+    }
+    if (ad.value == "") {
+      alert("Address must be filled out");
+      ad.focus();
+      return false;
+    }
+    if (st.value == "") {
+      alert("State must be filled out");
+      st.focus();
+      return false;
+    }
+    if (co.value == "") {
+      alert("Course must be filled out");
+      co.focus();
+      return false;
+    }
+    if (cont.value == "") {
+      alert("Contact number must be filled out");
+      cont.focus();
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+  </Script>
+</html> 
